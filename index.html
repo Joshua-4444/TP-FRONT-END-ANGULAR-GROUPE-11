@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="contactApp">
+<head>
+    <title>Annuaire Contacts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="ContactController as vm">
+    <div class="container">
+        <h1 class="text-center">Gestion des contacts</h1>
+        
+        <!-- Barre de recherche -->
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="vm.searchQuery" 
+                   placeholder="Rechercher par nom ou email...">
+        </div>
+
+        <!-- Messages d'état -->
+        <div class="alert alert-success" ng-show="vm.successMessage">{{vm.successMessage}}</div>
+        <div class="alert alert-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div>
+
+        <!-- Liste des contacts -->
+        <div ng-include="'views/list.html'"></div>
+        
+        <!-- Formulaire -->
+        <div ng-include="'views/form.html'"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services/ContactService.js"></script>
+    <script src="controllers/ContactController.js"></script>
+</body>
+</html>
