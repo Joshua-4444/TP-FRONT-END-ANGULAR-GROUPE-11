@@ -1,1 +1,1 @@
-angular.module('contactApp', []);
+angular.module('contactApp', []); 
