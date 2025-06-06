@@ -1,4 +1,4 @@
-angular.module('contactApp').factory('ContactService', function($q) {
+angular.module('contactApp').factory('ContactService', function($q) { 
     // Données mockées (simulées)
     const mockContacts = [
         { _id: 1, name: "Jean Dupont", email: "jean@example.com", phone: "01 23 45 67 89" },
